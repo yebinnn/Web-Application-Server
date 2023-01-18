@@ -8,7 +8,7 @@ on:
     branches:
       - main
 env:
-  AWS_REGION: ap-northeaest-2
+  AWS_REGION: ${{ secrets.AWS_REGION }}
   ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
   ECR_REPOSITORY: devops03-teamf
   IMAGE_TAG: ${{ github.sha }}
@@ -29,6 +29,7 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
+        aws-output-format : json
 
     - name: Login to Amazon ECR
       id: login-ecr
