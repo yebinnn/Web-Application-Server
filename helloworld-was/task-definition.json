@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:554201403993:task-definition/helloworld-was-task-definitions:5",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:554201403993:task-definition/helloworld-was-task-definitions:8",
     "containerDefinitions": [
         {
             "name": "helloworld-was-container",
-            "image": "554201403993.dkr.ecr.ap-northeast-2.amazonaws.com/helloworld-was:b21261f736fd8640f3ffaaea78a8411390fef5e3",
+            "image": "554201403993.dkr.ecr.ap-northeast-2.amazonaws.com/helloworld-was:latest",
             "cpu": 0,
             "portMappings": [
                 {
@@ -16,13 +16,12 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
             "secrets": [
                 {
                     "name": "MONGO_HOSTNAME",
-                    "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:554201403993:secret:mongodb/secrets-kbpHjf:MONGO_HOSTNAME::"
+                    "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:554201403993:secret:mongo-secret-SyOWdI:MONGO_HOSTNAME::"
                 },
                 {
                     "name": "MONGO_USERNAME",
@@ -47,7 +46,7 @@
     "family": "helloworld-was-task-definitions",
     "executionRoleArn": "arn:aws:iam::554201403993:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 5,
+    "revision": 8,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -93,7 +92,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-01-20T10:39:14.281Z",
+    "registeredAt": "2023-01-25T04:27:04.116Z",
     "registeredBy": "arn:aws:iam::554201403993:root",
     "tags": [
         {
